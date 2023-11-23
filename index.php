@@ -9,7 +9,7 @@ $action = @rr('action');
 $name = @rr('name');
 $sid = @rr('sid');
 
-if ($action == 'add') { //Добавление схемы
+if ($action == 'add') { //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 	$qu = "INSERT INTO `schems` values (NULL,'$name');";
 	$result = mysql_query ($qu);
 }
@@ -20,22 +20,22 @@ if ($action == 'reset') {
 
  if ($action == 'delete') {
 	$qu = "DELETE FROM `schems` WHERE `id`=$sid";
-	$result = mysql_query ($qu); //Удаляем схему
+	$result = mysql_query ($qu); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 	$qu = "DELETE FROM `outs` WHERE `id` IN (SELECT `oid` FROM `tds_out2s` WHERE `sid`=$sid)";
-	$result = mysql_query ($qu); //Удаляем все ауты удаляемой схемы
+	$result = mysql_query ($qu); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 	$qu = "DELETE FROM `filters` WHERE `id` IN (SELECT `fid` FROM `filt2o` WHERE `oid` IN (SELECT `oid` FROM `out2s` WHERE `sid`=$sid))";
-	$result = mysql_query ($qu); //Удаляем все фильтры всех аутов удаляемой схемы
+	$result = mysql_query ($qu); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 	$qu = "DELETE FROM `outs_stat` WHERE `oid` IN (SELECT `oid` FROM `out2s` WHERE `sid`=$sid)";
-	$result = mysql_query ($qu); //Удаляем всю статистику аутов удаляемой схемы
+	$result = mysql_query ($qu); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 	$qu = "DELETE FROM `filt2o` WHERE `oid` IN (SELECT `oid` FROM `out2s` WHERE `sid`=$sid)";
-	$result = mysql_query ($qu); //Удаляем все связи фильтров и аутов удаляемой схемы
+	$result = mysql_query ($qu); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 
 	$qu = "DELETE FROM `out2s` WHERE `sid`=$sid";
-	$result = mysql_query ($qu); //Удаляем все связи аутов и удаляемой схемы
+	$result = mysql_query ($qu); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
  }
 
 $shad = "#EAEAEA";
@@ -150,7 +150,11 @@ All Countries
 </td>
 </tr>
 <tr>
-<td class="copy" height="30" bgcolor="#585B61">Script author: mizhgan</td>
+<td class="copy" height="30" bgcolor="#585B61" style="padding: 10px; border-radius: 5px;">
+	<p>Script author: mizhgan</p>
+	<p>Mod <a href="https://aff.rip/">Aff.Rip</a> crew, 2023</p>
+	<p>Donate BTC: <span style="color: red;">bc1qfy8ldp4ggzetmak8jyml9mqlla9h3dreqznge7</span></p>
+</td>
 </tr>
 </table>
 
