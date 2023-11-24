@@ -25,3 +25,5 @@ you can send the error in our support discord and someone will help you fix it, 
 Visit our site for more https://aff.rip/
 
 Donate: bc1qfy8ldp4ggzetmak8jyml9mqlla9h3dreqznge7
+
+![screenie](image.png)
